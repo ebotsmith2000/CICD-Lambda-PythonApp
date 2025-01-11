@@ -2,7 +2,7 @@ import requests
 
 def lambda_handler(event, context):
     url = "https://api.quotable.io/random"
-    response = requests.get(url, params=query, verify=False)
+    response = requests.get(url)
 
     if response.status_code == 200:
         quote_data = response.json()
@@ -12,4 +12,3 @@ def lambda_handler(event, context):
         print("v1.1")
     else:
         print(f"Failed to retrieve a random quote. Status code: {response.status_code}")
-
