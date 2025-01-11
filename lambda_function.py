@@ -2,7 +2,7 @@ import requests
 
 def lambda_handler(event, context):
     url = "https://api.quotable.io/random"
-    response = requests.get(url)
+    response = requests.get(url, params=query, verify=False)
 
     if response.status_code == 200:
         quote_data = response.json()
